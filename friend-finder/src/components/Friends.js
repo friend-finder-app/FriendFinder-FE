@@ -5,56 +5,56 @@ import ProfileItem from "./ProfileItem"
 
 const dummy = [
   {
-    name: "James W.",
+    name: "My Friends",
     location: "San Francico, CA",
     hobbies: "Fishing, Swimming, Hiking",
     image: noAvatar
   },
   {
-    name: "James W.",
+    name: "My Friends",
     location: "San Francico, CA",
     hobbies: "Fishing, Swimming, Hiking",
     image: noAvatar
   },
   {
-    name: "James W.",
+    name: "My Friends",
     location: "San Francico, CA",
     hobbies: "Fishing, Swimming, Hiking",
     image: noAvatar
   },
   {
-    name: "James W.",
+    name: "My Friends",
     location: "San Francico, CA",
     hobbies: "Fishing, Swimming, Hiking",
     image: noAvatar
   },
   {
-    name: "James W.",
+    name: "My Friends",
     location: "San Francico, CA",
     hobbies: "Fishing, Swimming, Hiking",
     image: noAvatar
   },
   {
-    name: "James W.",
+    name: "My Friends",
     location: "San Francico, CA",
     hobbies: "Fishing, Swimming, Hiking",
     image: noAvatar
   },
   {
-    name: "James W.",
+    name: "My Friends",
     location: "San Francico, CA",
     hobbies: "Fishing, Swimming, Hiking",
     image: noAvatar
   },
   {
-    name: "James W.",
+    name: "My Friends",
     location: "San Francico, CA",
     hobbies: "Fishing, Swimming, Hiking",
     image: noAvatar
   }
 ]
 
-const Profiles = props => {
+const Friends = props => {
 
   let profileItems = dummy.map((item, index) => {
     return (
@@ -73,10 +73,11 @@ const Profiles = props => {
       {profileItems}
     </Fragment>
   )
-}
-
-Profiles.propTypes = {
 
 }
 
-export default Profiles
+Friends.propTypes = {
+
+}
+
+export default Friends

@@ -1,61 +1,61 @@
-import React, {Fragment} from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import noAvatar from "../images/no_avatar.jpg"
 import ProfileItem from "./ProfileItem"
 
 const dummy = [
   {
-    name: "James W.",
+    name: "Friends Request",
     location: "San Francico, CA",
     hobbies: "Fishing, Swimming, Hiking",
     image: noAvatar
   },
   {
-    name: "James W.",
+    name: "Friends Request",
     location: "San Francico, CA",
     hobbies: "Fishing, Swimming, Hiking",
     image: noAvatar
   },
   {
-    name: "James W.",
+    name: "Friends Request",
     location: "San Francico, CA",
     hobbies: "Fishing, Swimming, Hiking",
     image: noAvatar
   },
   {
-    name: "James W.",
+    name: "Friends Request",
     location: "San Francico, CA",
     hobbies: "Fishing, Swimming, Hiking",
     image: noAvatar
   },
   {
-    name: "James W.",
+    name: "Friends Request",
     location: "San Francico, CA",
     hobbies: "Fishing, Swimming, Hiking",
     image: noAvatar
   },
   {
-    name: "James W.",
+    name: "Friends Request",
     location: "San Francico, CA",
     hobbies: "Fishing, Swimming, Hiking",
     image: noAvatar
   },
   {
-    name: "James W.",
+    name: "Friends Request",
     location: "San Francico, CA",
     hobbies: "Fishing, Swimming, Hiking",
     image: noAvatar
   },
   {
-    name: "James W.",
+    name: "Friends Request",
     location: "San Francico, CA",
     hobbies: "Fishing, Swimming, Hiking",
     image: noAvatar
   }
 ]
 
-const Profiles = props => {
 
+const FriendRequests = props => {
   let profileItems = dummy.map((item, index) => {
     return (
       <ProfileItem 
@@ -75,8 +75,8 @@ const Profiles = props => {
   )
 }
 
-Profiles.propTypes = {
+FriendRequests.propTypes = {
 
 }
 
-export default Profiles
+export default FriendRequests
