@@ -9,8 +9,11 @@ const Navbar = props => {
 
       <nav className="nav-bar">
       <div className="container">
-        <div>Finder</div>
+        <div><Link to="/">Finder</Link></div>
         <ul className="nav-links">
+          <li><Link to="/friend-requests">Requests</Link></li>
+          <li><Link to="/friends">Friends</Link></li>
+          <li><Link to="/profiles">Profiles</Link></li>
           <li><Link to="/signup">SignUp</Link></li>
           <li><Link to="/login">Login</Link></li>
         </ul>

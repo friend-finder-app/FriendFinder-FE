@@ -5,7 +5,6 @@ import Navbar from "./Navbar"
 const Landing = props => {
   return (
     <div>
-      <Navbar />
       Landing
     </div>
   )
