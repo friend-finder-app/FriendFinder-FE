@@ -31,3 +31,39 @@
     transform: rotate(360deg);
   }
 }
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* nav */
+
+.nav-bar .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #dee6eb;
+}
+
+.nav-bar {
+  background-color: #dee6eb;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav-links li {
+  margin: 10px;
+  list-style-type: none;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+}
