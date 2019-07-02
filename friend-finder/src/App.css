@@ -302,26 +302,6 @@ a {
   width: 7.5em;
 }
 
-.pic-title {
-  display: flex;
-  justify-content: center;
-}
-
-#pic-upload {
-  padding-left: 75px;
-  
-}
-
-.pic-icon {
-  margin: 0 auto;
-  padding: 10px 0 20px;
-}
-.pic {
-  margin: 25px auto;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-}
 .register-top h1, .login-top h1 {
   display: flex;
   justify-content: center;

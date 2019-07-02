@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Logo from '../images/LogoFF.png'
 import Dummy from '../images/ProfileDummy.png'
+import axios from 'axios'
 
 const Signup = props => {
 
@@ -14,17 +15,20 @@ const Signup = props => {
     city: '',
     bio: '',
     firstName: '',
-    lastName: ''
+    lastName: '',
+    age: '',
   })
 
   const handleChange = prop => e => {
     setValues({ ...values, [prop]: e.target.value });
   };
 
-  const registerHandler = e => {
+  const registerHandler = async e => {
     e.preventDefault()
 // sending the state values to backend for verification
     console.log(values)
+    await axios.post(`https://friendfinder-be.herokuapp.com/api/users/register`, values)
+    props.history.push('/login')
   }
 
   return (
@@ -54,6 +58,13 @@ const Signup = props => {
             onChange={handleChange("lastName")}
             placeholder = "Last name"
           />
+           <input
+           type = "number"
+            className = "input-styles"
+            value={values.age}
+            onChange={handleChange("age")}
+            placeholder = "Enter Age"
+          />
           <input
               className = "input-styles"
               value={values.email}
@@ -67,17 +78,16 @@ const Signup = props => {
               onChange={handleChange("password")}
               placeholder = "password"
               type = "Password"
+              pattern=".{8,}" 
+              title="Eight or more characters"
           />     
-          <div className = 'pic'> 
-            <h4 className = 'pic-title'>Upload profile image below</h4>
-            <img src = {Dummy} width = "200em" alt = "Logo" className = 'pic-icon'/>
-            <input type="image" id = 'pic-upload'/>
-          </div>
           <input
               className = "input-styles"
               value={values.phone}
               onChange={handleChange("phone")}
               placeholder = "Phone Number"
+              pattern=".{10,}" 
+              title="Please input your 10 digit phone number"
           />
           <input
               className = "input-styles"
@@ -97,7 +107,7 @@ const Signup = props => {
             onChange={handleChange("bio")}
             placeholder = "Enter a brief description of yourself"
             cols="40" rows="5"
-          />
+          />d
 
           </div>
           <button className = "register-button" type = "submit">Register</button>
