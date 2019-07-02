@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link , Redirect} from "react-router-dom"
 
+
 const ProfileItem = props => {
   const youClicked = (id) => {
     console.log("hi");
