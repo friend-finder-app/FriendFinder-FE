@@ -188,6 +188,11 @@ a {
   padding-left: 75px;
   
 }
+
+.pic-icon {
+  margin: 0 auto;
+  padding: 10px 0 20px;
+}
 .pic {
   margin: 25px auto;
   display: flex;
