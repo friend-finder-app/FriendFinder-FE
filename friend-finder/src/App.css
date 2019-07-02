@@ -40,6 +40,14 @@
 
 /* nav */
 
+.nav-title {
+  font-family: cheap-pine, sans-serif;
+
+  font-weight: 400;
+  
+  font-style: normal;
+  font-size: 35px;
+}
 .nav-bar .container{
   display: flex;
   justify-content: space-between;
@@ -52,19 +60,20 @@
   border-bottom: 1px solid black;
 }
 
-.nav-links {
+.nav-links, .logo-nav-link {
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-decoration: none;
 }
 
-.nav-links li {
+
+.nav-links li, .logo-nav-link li {
   margin: 10px;
   list-style-type: none;
 }
 
-.nav-links li a {
+.nav-links li a, .logo-nav-link li {
   text-decoration: none;
   color: black;
 }

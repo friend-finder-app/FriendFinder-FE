@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from "react-router-dom"
-
+import Logo from '../images/LogoFF.png'
 
 
 const Navbar = props => {
@@ -9,7 +9,10 @@ const Navbar = props => {
 
       <nav className="nav-bar">
       <div className="container">
-        <div><Link to="/">Finder</Link></div>
+        <ul className = "logo-nav-link"> 
+          <li><img src = {Logo} width = "45em" alt = "Logo"/> </li>
+          <li className='nav-title'><Link to="/" >Friend Finder</Link></li>
+        </ul>
         <ul className="nav-links">
           <li><Link to="/friend-requests">Requests</Link></li>
           <li><Link to="/friends">Friends</Link></li>
