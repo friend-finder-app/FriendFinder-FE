@@ -20,21 +20,26 @@ const Signup = props => {
     setValues({ ...values, [prop]: e.target.value });
   };
 
-  return (
-    <div className = "login-container">
-      <div className = 'login-top'> 
-        <h1> Login </h1>
-        <img className = 'login-logo' src = {Logo} width = "45em" alt = "Logo"/> 
+  const registerHandler = e => {
+    e.preventDefault()
+// sending the state values to backend for verification
+    console.log(values)
+  }
 
+  return (
+    <div className = "register-container">
+      <div className = 'register-top'> 
+        <h1> Sign Up ! </h1>
+        <img className = 'register-logo' src = {Logo} width = "45em" alt = "Logo"/> 
       </div>
-      <div className = "login-form">
-        <form>
-          <div className = 'login-form-inputs'> 
+      <div className = "register-form">
+        <form onSubmit = {registerHandler}>
+          <div className = 'register-form-inputs'> 
           <input
               className = "input-styles"
               value={values.username}
               onChange={handleChange("username")}
-              placeholder = "username"
+              placeholder = "Username"
           />
           <input
             className = "input-styles"
@@ -52,14 +57,15 @@ const Signup = props => {
               className = "input-styles"
               value={values.email}
               onChange={handleChange("email")}
-              placeholder = "email"
+              placeholder = "Email"
+              type = "email"
           />     
           <input
               className = "input-styles"
               value={values.password}
               onChange={handleChange("password")}
               placeholder = "password"
-              type = "password"
+              type = "Password"
           />     
           <input
               className = "input-styles"
@@ -87,6 +93,7 @@ const Signup = props => {
             cols="40" rows="5"
           />
           </div>
+          <button className = "register-button" type = "submit">Register</button>
         </form>
       </div>
     </div>
