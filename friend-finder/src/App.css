@@ -57,6 +57,7 @@
 .nav-bar {
   background-color: #dee6eb;
   border-bottom: 1px solid black;
+  box-shadow:  10px 3px 3px gray;
 }
 
 .nav-links, .logo-nav-link {
