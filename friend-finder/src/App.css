@@ -42,12 +42,11 @@
 
 .nav-title {
   font-family: cheap-pine, sans-serif;
-
   font-weight: 400;
-  
   font-style: normal;
   font-size: 35px;
 }
+
 .nav-bar .container{
   display: flex;
   justify-content: space-between;
@@ -161,4 +160,31 @@ a {
 
 .single-profile  img{
   width: 80%;
+}
+
+/* Login Component */
+.login-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 400px;
+}
+
+.login-logo {
+  width: 12em;
+}
+
+.login-top {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.login-form-inputs {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 80%
 }
