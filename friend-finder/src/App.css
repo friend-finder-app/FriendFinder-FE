@@ -164,7 +164,8 @@ a {
 
 /* Login Component */
 .login-container {
-  margin: 0 auto;
+  border: solid .1px black;
+  margin: 30px auto;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -175,8 +176,13 @@ a {
   width: 12em;
 }
 
+.login-top h1 {
+  display: flex;
+  justify-content: center;
+}
+
 .login-top {
-  margin: 0 auto;
+  margin: 25px auto;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -187,4 +193,8 @@ a {
   flex-direction: column;
   align-content: center;
   width: 80%
+}
+
+.input-styles {
+  margin: 5px 0;
 }
