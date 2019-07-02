@@ -93,7 +93,9 @@ div.landingText {
     overflow: hidden;
     margin: 25px;
     transition: .6s;
+    background-color: #D3D3D3;
   }
+
 
   .this:hover {
     cursor: pointer;

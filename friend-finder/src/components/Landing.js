@@ -3,8 +3,11 @@ import PropTypes from 'prop-types'
 import Navbar from "./Navbar"
 import background from '../images/friendUnsplashed.jpg'
 import Logo from '../images/LogoFF.png'
+import { Link } from "react-router-dom"
 
 const Landing = props => {
+
+
   return (
     <div>
   <div className = 'landingContainer'>
@@ -24,8 +27,8 @@ const Landing = props => {
       </div>
       </div>
       <div className = 'buttons-landing'> 
-        <button  className = 'cover this'  href = '/login'>Login</button>
-        <button  className = 'slide this' href = '/signup'>Sign Up</button>   
+        <Link  className = 'cover this'  to = '/login'>Login</Link>
+        <Link  className = 'slide this' to = '/signup'>Sign Up</Link>   
       </div>
       </div>
       </div>
