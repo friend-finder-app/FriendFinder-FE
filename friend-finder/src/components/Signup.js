@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Logo from '../images/LogoFF.png'
+import Dummy from '../images/ProfileDummy.png'
 
 const Signup = props => {
 
@@ -69,6 +70,7 @@ const Signup = props => {
           />     
           <div className = 'pic'> 
             <h4 className = 'pic-title'>Upload profile image below</h4>
+            <img src = {Dummy} width = "200em" alt = "Logo" className = 'pic-icon'/>
             <input type="file" id = 'pic-upload'/>
           </div>
           <input

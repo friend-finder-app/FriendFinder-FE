@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Logo from '../images/LogoFF.png'
+import Dummy from '../images/ProfileDummy.png'
 
 const Login = props => {
 
