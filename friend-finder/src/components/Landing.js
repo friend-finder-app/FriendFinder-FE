@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Navbar from "./Navbar"
 
 const Landing = props => {
+  console.log(props)
   return (
     <div>
       Landing
