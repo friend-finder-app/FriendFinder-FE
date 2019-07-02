@@ -2,6 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Logo from '../images/LogoFF.png'
 import Dummy from '../images/ProfileDummy.png'
+import axios from 'axios'
+import {login} from '../actions/index'
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
 
 const Login = props => {
 
@@ -13,12 +17,21 @@ const Login = props => {
 
   const handleChange = prop => e => {
     setValues({ ...values, [prop]: e.target.value });
+    
   };
 
-  const loginHandler = e => {
+  const loginHandler = async e => {
     e.preventDefault()
 // sending the state values to backend for verification
-    console.log(values)
+console.log(values)
+    await props.login(values)
+
+    if(localStorage.getItem('token')) {
+      props.history.push('/friends')
+    } else {
+      alert ("Invalid Credentials, please enter correct email/password, or sign up")
+    }
+
   }
 
   return (
@@ -53,8 +66,16 @@ const Login = props => {
   )
 }
 
-Login.propTypes = {
-
+const mapStateToProps = state => {
+  return {
+    loginFail: state.loginFail,
+    isLoggingIn: state.isLoggingIn
+  }
 }
 
-export default Login
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { login }
+  )(Login)
+);

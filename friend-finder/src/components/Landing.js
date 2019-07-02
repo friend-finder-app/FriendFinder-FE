@@ -27,8 +27,8 @@ const Landing = props => {
       </div>
       </div>
       <div className = 'buttons-landing'> 
-        <Link  className = 'cover this'  to = '/login'>Login</Link>
-        <Link  className = 'slide this' to = '/signup'>Sign Up</Link>   
+        <Link  className = 'slide this'  to = '/login'>Login</Link>
+        <Link  className = 'cover this' to = '/signup'>Sign Up</Link>   
       </div>
       </div>
       </div>
