@@ -1,9 +1,15 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import PropTypes from 'prop-types'
 import Dummy from '../images/ProfileDummy.png'
 import Button from '../images/PlusButton.png'
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
 
 const SideBar = props => {
+
+  useEffect(() => {
+    console.log(props.userInfo.id)
+  },[])
 
   return (
     <div className="side-bar">
@@ -20,4 +26,16 @@ SideBar.propTypes = {
 
 }
 
-export default SideBar
+const mapStateToProps = state => {
+  return {
+    userInfo: state.login
+  }
+}
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    // { getUserinfo }
+  )(SideBar)
+);
+

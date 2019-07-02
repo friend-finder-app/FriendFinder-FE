@@ -4,15 +4,18 @@ import {
 } from '../actions'
 
 const initialState = {
-    userSignUp: []
+    ifAuth: false,
   }
   
   export default function(state = initialState, action) {
     switch(action.type) {
+        
         case LOGIN_SUCCESS:
+            console.log(action.payload)
         return {
             ...state,
-            userSignUp: action.payload
+            ...action.payload,
+            ifAuth: true,
         }
         default:
             return state;
