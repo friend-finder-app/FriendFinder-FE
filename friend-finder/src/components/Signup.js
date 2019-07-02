@@ -20,14 +20,20 @@ const Signup = props => {
     setValues({ ...values, [prop]: e.target.value });
   };
 
+  const registerHandler = e => {
+    e.preventDefault()
+// sending the state values to backend for verification
+    console.log(values)
+  }
+
   return (
     <div className = "register-container">
       <div className = 'register-top'> 
-        <h1> Register </h1>
+        <h1> Sign Up ! </h1>
         <img className = 'register-logo' src = {Logo} width = "45em" alt = "Logo"/> 
       </div>
       <div className = "register-form">
-        <form>
+        <form onSubmit = {registerHandler}>
           <div className = 'register-form-inputs'> 
           <input
               className = "input-styles"
@@ -86,7 +92,7 @@ const Signup = props => {
             cols="40" rows="5"
           />
           </div>
-          <button className = "register-button">Register</button>
+          <button className = "register-button" type = "submit">Register</button>
         </form>
       </div>
     </div>
