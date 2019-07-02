@@ -162,7 +162,7 @@ a {
   width: 80%;
 }
 
-/* Login Component */
+/* Register Component */
 .register-container, .login-container {
   border: solid 1px black;
   border-radius: 10px;
@@ -178,6 +178,21 @@ a {
   width: 7.5em;
 }
 
+.pic-title {
+  display: flex;
+  justify-content: center;
+}
+
+#pic-upload {
+  padding-left: 75px;
+  
+}
+.pic {
+  margin: 25px auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
 .register-top h1, .login-top h1 {
   display: flex;
   justify-content: center;
