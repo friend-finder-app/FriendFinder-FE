@@ -40,6 +40,13 @@
 
 /* nav */
 
+.nav-title {
+  font-family: cheap-pine, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 35px;
+}
+
 .nav-bar .container{
   display: flex;
   justify-content: space-between;
@@ -50,21 +57,23 @@
 .nav-bar {
   background-color: #dee6eb;
   border-bottom: 1px solid black;
+  box-shadow:  10px 3px 3px gray;
 }
 
-.nav-links {
+.nav-links, .logo-nav-link {
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-decoration: none;
 }
 
-.nav-links li {
+
+.nav-links li, .logo-nav-link li {
   margin: 10px;
   list-style-type: none;
 }
 
-.nav-links li a {
+.nav-links li a, .logo-nav-link li {
   text-decoration: none;
   color: black;
 }
@@ -157,4 +166,178 @@ a {
 
 .single-profile  img{
   width: 80%;
+}
+
+/* Register Component */
+.register-container, .login-container {
+  border: solid 1px black;
+  border-radius: 10px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 450px;
+  box-shadow: 12px 12px 2px 1px rgba(197, 32, 38, .4);
+}
+
+.register-logo {
+  width: 7.5em;
+}
+
+.pic-title {
+  display: flex;
+  justify-content: center;
+}
+
+#pic-upload {
+  padding-left: 75px;
+  
+}
+.pic {
+  margin: 25px auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.register-top h1, .login-top h1 {
+  display: flex;
+  justify-content: center;
+  font-family: cheap-pine, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+}
+
+.register-top, .login-top {
+  margin: 0 auto 15px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.register-form-inputs, .login-form-inputs {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 80%
+}
+
+.register-button {
+  margin: 25px auto;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: #c52026;
+  font-family: cheap-pine, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+  border: 3px solid #c52026;
+  padding: 10px 20px;
+  position: relative;
+  font-weight: 400;
+  overflow: hidden;
+  text-transform: uppercase;
+  transition: all .5s;
+  overflow: hidden;
+  background-color:white;
+  transition: 1s;
+  position: relative;
+}
+
+.register-button:hover {
+  letter-spacing: 4px;
+  font-weight: 100;
+  cursor: pointer;
+  color: white;
+  background-color: #c52026;
+
+}
+
+.register-button:before  {
+  content: '';
+  background-color: white;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  position: absolute;
+  transform: 
+    translateX(-100%) 
+    rotate(45deg);
+  transition: all 0.8s;
+}
+
+.register-button:hover:before {
+  transform: 
+    translateX(100%) rotate(45deg);
+}
+
+
+.login-button {
+  margin: 25px auto;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: #c52026;
+  font-family: cheap-pine, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+  border: 3px solid #c52026;
+  padding: 10px 20px;
+  position: relative;
+  font-weight: 400;
+  overflow: hidden;
+  text-transform: uppercase;
+  transition: all .5s;
+  overflow: hidden;
+  background-color:white;
+  transition: 1s;
+  position: relative;
+}
+
+.login-button:hover {
+  letter-spacing: 4px;
+  font-weight: 100;
+  cursor: pointer;
+  color: white;
+  background-color: #c52026;
+
+}
+
+.login-button:before  {
+  content: '';
+  background-color: white;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  position: absolute;
+  transform: 
+    translateX(-100%) 
+    rotate(45deg);
+  transition: all 0.8s;
+}
+
+.login-button:hover:before {
+  transform: 
+    translateX(100%) rotate(45deg);
+}
+
+/* input fields CSS */
+textarea {
+  font-family:times, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+}
+
+.input-styles {
+  margin: 6px 0;
+  padding: 5px;
+  font-family:times, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
 }
