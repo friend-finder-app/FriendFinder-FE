@@ -58,6 +58,7 @@ const Signup = props => {
               value={values.email}
               onChange={handleChange("email")}
               placeholder = "Email"
+              type = "email"
           />     
           <input
               className = "input-styles"
