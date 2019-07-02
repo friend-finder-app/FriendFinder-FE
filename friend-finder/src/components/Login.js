@@ -44,7 +44,6 @@ const Login = props => {
               type = "Password"
           />     
           <button className = "login-button" type = "submit">Enter</button>
-           
           </div>
         </form>
       </div>

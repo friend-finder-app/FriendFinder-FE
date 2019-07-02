@@ -67,6 +67,10 @@ const Signup = props => {
               placeholder = "password"
               type = "Password"
           />     
+          <div className = 'pic'> 
+            <h4 className = 'pic-title'>Upload profile image below</h4>
+            <input type="file" id = 'pic-upload'/>
+          </div>
           <input
               className = "input-styles"
               value={values.phone}
@@ -92,6 +96,7 @@ const Signup = props => {
             placeholder = "Enter a brief description of yourself"
             cols="40" rows="5"
           />
+
           </div>
           <button className = "register-button" type = "submit">Register</button>
         </form>
