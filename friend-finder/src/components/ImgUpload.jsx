@@ -20,12 +20,12 @@ class ImgUpload extends Component {
       this.setState({
         multerImage: URL.createObjectURL(e.target.files[0])
       });
-
+      const headers =  {token: localStorage.getItem("token")}
       axios
         .post(
-          `https://friendfinder-be.herokuapp.com/api/uploadimage`,
-          imageFormObj
+          `https://friendfinder-be.herokuapp.com/api/uploadimage`, imageFormObj, {headers}
         )
+        // console.log(user)
         .then(data => {
           if (data) {
             alert("Image has been successfully uploaded using multer");

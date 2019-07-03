@@ -5,33 +5,54 @@ import Button from "../images/PlusButton.png";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { getUserinfo } from "../actions";
+import ImgUpload from './ImgUpload.jsx'
 
-const SideBar = props => {
-  useEffect(() => {
-    const fetchData = async () => {
-      await props.getUserinfo(props.userInfo.id);
-      console.log(props.ProfileInfo);
-    };
-    fetchData();
-  }, []);
+class SideBar extends React.Component {
+  constructor(props){
+    super(props)
 
+    this.state = {
+      profileImg: {}
+    }
+  
+  }
+
+
+   async componentDidMount() {
+
+      await this.props.getUserinfo(this.props.userInfo.id);
+      this.setState({profileImg: this.props.userInfo})
+      // const profilePhoto = await this.props.userInfo.images[0].imageData
+      this.setState({profileImg: this.props.userInfo.images[0].imageData})
+   
+ 
+  }
+
+
+
+  render(){
+  //   if (!this.props.userInfo) {
+  //     return <span>Loading...</span>;
+  // }
   return (
     <div className="side-bar">
       <div className="side-bar-img">
-        <img src={Dummy} alt="user-image" />
-        <h2>Welcome {props.userInfo.firstName} </h2>
+
+        <img src= {`https://friendfinder-be.herokuapp.com/${this.state.profileImg}`} />     
+ 
+      <h2>Welcome {this.props.userInfo.firstName} </h2>
         {/* <h3>Edit Profile</h3> */}
       </div>
+      <ImgUpload/>
     </div>
-  );
+  )}
 };
 
 SideBar.propTypes = {};
 
 const mapStateToProps = state => {
   return {
-    userInfo: state.login,
-    ProfileInfo: state.login.ProfileInfo
+    userInfo: state.image.profileData
   };
 };
 

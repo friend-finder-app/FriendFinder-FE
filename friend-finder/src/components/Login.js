@@ -25,7 +25,7 @@ const Login = props => {
 // sending the state values to backend for verification
 
     await props.login(values)
-
+      
     if(localStorage.getItem('token')) {
       // console.log(props)
       // await props.loadUser(props.userInfo.id)
