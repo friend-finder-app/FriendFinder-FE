@@ -1,32 +1,48 @@
 import {
-  FETCH_MATCH,
-  FETCH_FRIEND,
-  FETCH_FRIEND_REQUEST
-} from "../actions/profiles"
+  // FETCH_MATCH,
+  // FETCH_FRIEND,
+  // FETCH_FRIEND_REQUEST,
+  GET_FRIENDS_FAIL,
+  GET_FRIENDS,
+  GET_FRIENDS_REQUEST,
+  GET_MATCH_FRIENDS
+} from "../actions"
 
 const initialState = {
   matches: [],
   friends: [],
-  friendRequest: []
+  friendRequest: [],
+  allFriends: []
 }
 
-export default function(state = initialState, action) {
-  switch(action.type) {
-    case FETCH_FRIEND:
+export default function (state = initialState, action) {
+  switch (action.type) {
+    case GET_FRIENDS:
       return {
         ...state,
-        FETCH_FRIEND: action.payload
+        allFriends: action.payload
       }
-      case FETCH_MATCH:
+    case GET_FRIENDS_REQUEST:
       return {
         ...state,
-        FETCH_MATCH: action.payload
+        friendRequest: action.payload
       }
-      case FETCH_FRIEND_REQUEST:
+    case GET_MATCH_FRIENDS:
       return {
         ...state,
-        FETCH_FRIEND_REQUEST: action.payload
+        matches: action.payload
       }
+
+    // case FETCH_MATCH:
+    //   return {
+    //     ...state,
+    //     FETCH_MATCH: action.payload
+    //   }
+    // case FETCH_FRIEND_REQUEST:
+    //   return {
+    //     ...state,
+    //     FETCH_FRIEND_REQUEST: action.payload
+    //   }
     default:
       return state;
   }

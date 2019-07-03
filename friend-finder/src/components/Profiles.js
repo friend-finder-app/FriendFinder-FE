@@ -1,89 +1,97 @@
-import React, {Fragment, useEffect } from 'react'
-import PropTypes from 'prop-types'
-import noAvatar from "../images/no_avatar.jpg"
-import ProfileItem from "./ProfileItem"
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import noAvatar from "../images/no_avatar.jpg";
+import ProfileItem from "./ProfileItem";
 import { getUserinfo } from "../actions";
+import { getMatchFriends } from "./../actions/index";
+import { connect } from "react-redux";
 
-const dummy = [
-  {
-    name: "James W.",
-    location: "San Francico, CA",
-    hobbies: "Fishing, Swimming, Hiking",
-    image: noAvatar
-  },
-  {
-    name: "James W.",
-    location: "San Francico, CA",
-    hobbies: "Fishing, Swimming, Hiking",
-    image: noAvatar
-  },
-  {
-    name: "James W.",
-    location: "San Francico, CA",
-    hobbies: "Fishing, Swimming, Hiking",
-    image: noAvatar
-  },
-  {
-    name: "James W.",
-    location: "San Francico, CA",
-    hobbies: "Fishing, Swimming, Hiking",
-    image: noAvatar
-  },
-  {
-    name: "James W.",
-    location: "San Francico, CA",
-    hobbies: "Fishing, Swimming, Hiking",
-    image: noAvatar
-  },
-  {
-    name: "James W.",
-    location: "San Francico, CA",
-    hobbies: "Fishing, Swimming, Hiking",
-    image: noAvatar
-  },
-  {
-    name: "James W.",
-    location: "San Francico, CA",
-    hobbies: "Fishing, Swimming, Hiking",
-    image: noAvatar
-  },
-  {
-    name: "James W.",
-    location: "San Francico, CA",
-    hobbies: "Fishing, Swimming, Hiking",
-    image: noAvatar
+class Profiles extends Component {
+  componentDidMount() {
+    this.props.getMatchFriends(this.props.userInfo.hobbies);
+    console.log(this.props.userInfo);
   }
-]
 
-const Profiles = props => {
-
-  let profileItems = dummy.map((item, index) => {
+  render() {
     return (
-      <ProfileItem 
-        key={index}
-        name={item.name}
-        location={item.location}
-        image={item.image}
-        hobbies={item.hobbies}
-      />
-    )
-  })
-
-  return (
-    <Fragment>
-      {profileItems}
-    </Fragment>
-  )
-}
-
-Profiles.propTypes = {
-
+      <div>
+        <h1>Hello World!</h1>
+        {this.props.matches.map(users => (
+          <ProfileItem
+            key={users._id}
+            button="Add Friend"
+            name={`${users.firstName}, ${users.lastName}`}
+            location={`${users.city},${users.state}`}
+            image={users.image}
+            hobbies={users.hobbies}
+            id={users._id}
+          />
+        ))}
+      </div>
+    );
+  }
 }
 
 const mapStateToProps = state => {
   return {
-    userInfo: state.image.profileData
+    userInfo: state.image.profileData,
+    usersList: state.users.users,
+    matches: state.profiles.matches
   };
 };
 
-export default Profiles
+export default connect(
+  mapStateToProps,
+  { getMatchFriends }
+)(Profiles);
+
+//const dummy = [
+//   {
+//     name: "James W.",
+//     location: "San Francico, CA",
+//     hobbies: "Fishing, Swimming, Hiking",
+//     image: noAvatar
+//   },
+//   {
+//     name: "James W.",
+//     location: "San Francico, CA",
+//     hobbies: "Fishing, Swimming, Hiking",
+//     image: noAvatar
+//   },
+//   {
+//     name: "James W.",
+//     location: "San Francico, CA",
+//     hobbies: "Fishing, Swimming, Hiking",
+//     image: noAvatar
+//   },
+//   {
+//     name: "James W.",
+//     location: "San Francico, CA",
+//     hobbies: "Fishing, Swimming, Hiking",
+//     image: noAvatar
+//   },
+//   {
+//     name: "James W.",
+//     location: "San Francico, CA",
+//     hobbies: "Fishing, Swimming, Hiking",
+//     image: noAvatar
+//   },
+//   {
+//     name: "James W.",
+//     location: "San Francico, CA",
+//     hobbies: "Fishing, Swimming, Hiking",
+//     image: noAvatar
+//   },
+//   {
+//     name: "James W.",
+//     location: "San Francico, CA",
+//     hobbies: "Fishing, Swimming, Hiking",
+//     image: noAvatar
+//   },
+//   {
+//     name: "James W.",
+//     location: "San Francico, CA",
+//     hobbies: "Fishing, Swimming, Hiking",
+//     image: noAvatar
+//   }
+// ]

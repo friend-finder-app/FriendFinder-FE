@@ -1,82 +1,42 @@
-import React, { Fragment } from 'react'
-import PropTypes from 'prop-types'
-import noAvatar from "../images/no_avatar.jpg"
-import ProfileItem from "./ProfileItem"
+import React, { Fragment } from "react";
+import PropTypes from "prop-types";
+import noAvatar from "../images/no_avatar.jpg";
+import ProfileItem from "./ProfileItem";
+import { connect } from "react-redux";
+import { getFriendsRequest } from "./../actions/index";
 
-const dummy = [
-  {
-    name: "Friends Request",
-    location: "San Francico, CA",
-    hobbies: "Fishing, Swimming, Hiking",
-    image: noAvatar
-  },
-  {
-    name: "Friends Request",
-    location: "San Francico, CA",
-    hobbies: "Fishing, Swimming, Hiking",
-    image: noAvatar
-  },
-  {
-    name: "Friends Request",
-    location: "San Francico, CA",
-    hobbies: "Fishing, Swimming, Hiking",
-    image: noAvatar
-  },
-  {
-    name: "Friends Request",
-    location: "San Francico, CA",
-    hobbies: "Fishing, Swimming, Hiking",
-    image: noAvatar
-  },
-  {
-    name: "Friends Request",
-    location: "San Francico, CA",
-    hobbies: "Fishing, Swimming, Hiking",
-    image: noAvatar
-  },
-  {
-    name: "Friends Request",
-    location: "San Francico, CA",
-    hobbies: "Fishing, Swimming, Hiking",
-    image: noAvatar
-  },
-  {
-    name: "Friends Request",
-    location: "San Francico, CA",
-    hobbies: "Fishing, Swimming, Hiking",
-    image: noAvatar
-  },
-  {
-    name: "Friends Request",
-    location: "San Francico, CA",
-    hobbies: "Fishing, Swimming, Hiking",
-    image: noAvatar
+//
+
+class FriendRequests extends React.Component {
+  componentDidMount() {
+    this.props.getFriendsRequest();
   }
-]
+  render() {
+    let profileItems = this.props.friendRequest.map((item, index) => {
+      return (
+        <ProfileItem
+          key={index}
+          name={item.username}
+          location={item.location}
+          image={item.imageData}
+          hobbies={item.hobbies}
+          button="Accept Friend"
+          id={item._id}
+        />
+      );
+    });
 
-
-const FriendRequests = props => {
-  let profileItems = dummy.map((item, index) => {
-    return (
-      <ProfileItem 
-        key={index}
-        name={item.name}
-        location={item.location}
-        image={item.image}
-        hobbies={item.hobbies}
-      />
-    )
-  })
-
-  return (
-    <Fragment>
-      {profileItems}
-    </Fragment>
-  )
+    return <Fragment>{profileItems}</Fragment>;
+  }
 }
 
-FriendRequests.propTypes = {
+const mapProps = state => {
+  return {
+    friendRequest: state.profiles.friendRequest
+  };
+};
 
-}
-
-export default FriendRequests
+export default connect(
+  mapProps,
+  { getFriendsRequest }
+)(FriendRequests);
