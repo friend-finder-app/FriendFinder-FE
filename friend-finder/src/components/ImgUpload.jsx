@@ -22,7 +22,10 @@ class ImgUpload extends Component {
       });
 
       axios
-        .post(`http://localhost:3300/api/uploadimage`, imageFormObj)
+        .post(
+          `https://friendfinder-be.herokuapp.com/api/uploadimage`,
+          imageFormObj
+        )
         .then(data => {
           if (data) {
             alert("Image has been successfully uploaded using multer");

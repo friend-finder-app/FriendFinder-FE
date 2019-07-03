@@ -23,15 +23,16 @@ const Login = props => {
   const loginHandler = async e => {
     e.preventDefault()
 // sending the state values to backend for verification
-console.log(values)
+
     await props.login(values)
 
     if(localStorage.getItem('token')) {
+      // console.log(props)
+      // await props.loadUser(props.userInfo.id)
       props.history.push('/friends')
     } else {
       alert ("Invalid Credentials, please enter correct email/password, or sign up")
     }
-
   }
 
   return (
@@ -61,15 +62,13 @@ console.log(values)
           </div>
         </form>
       </div>
-
     </div>
   )
 }
 
 const mapStateToProps = state => {
   return {
-    loginFail: state.loginFail,
-    isLoggingIn: state.isLoggingIn
+    loginID: state.login
   }
 }
 

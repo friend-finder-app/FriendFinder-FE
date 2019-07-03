@@ -3,6 +3,9 @@ import PropTypes from 'prop-types'
 import Logo from '../images/LogoFF.png'
 import Dummy from '../images/ProfileDummy.png'
 import axios from 'axios'
+import {postSignUp} from '../actions/index'
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
 
 const Signup = props => {
 
@@ -26,9 +29,9 @@ const Signup = props => {
   const registerHandler = async e => {
     e.preventDefault()
 // sending the state values to backend for verification
-    console.log(values)
-    await axios.post(`https://friendfinder-be.herokuapp.com/api/users/register`, values)
+    await props.postSignUp(values)
     props.history.push('/login')
+    // console.log(props.userProfile)
   }
 
   return (
@@ -107,7 +110,7 @@ const Signup = props => {
             onChange={handleChange("bio")}
             placeholder = "Enter a brief description of yourself"
             cols="40" rows="5"
-          />d
+          />
 
           </div>
           <button className = "register-button" type = "submit">Register</button>
@@ -121,4 +124,15 @@ Signup.propTypes = {
 
 }
 
-export default Signup
+const mapStateToProps = state => {
+  return {
+    userProfile: state.userSignUp
+  }
+}
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { postSignUp }
+  )(Signup)
+);

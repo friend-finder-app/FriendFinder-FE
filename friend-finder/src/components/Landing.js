@@ -4,7 +4,7 @@ import Navbar from "./Navbar"
 import background from '../images/friendUnsplashed.jpg'
 import Logo from '../images/LogoFF.png'
 import { Link } from "react-router-dom"
-
+import LandingNavbar from './LandingNavBar'
 const Landing = props => {
 
 

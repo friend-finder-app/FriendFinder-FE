@@ -4,13 +4,12 @@ import { Link } from "react-router-dom"
 
 
 const ProfileItem = props => {
-  console.log(props)
+  // console.log(props)
   const youClicked = () => {
     console.log("hi")
   }
 
   return (
-    
     <div className="small-profiles" >
       <img src={props.image} onClick={youClicked}/>
       <div>
@@ -19,7 +18,6 @@ const ProfileItem = props => {
         <p>{props.hobbies}</p>
       </div>
     </div>
-
   )
 }
 
