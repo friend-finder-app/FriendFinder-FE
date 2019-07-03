@@ -2,6 +2,9 @@ import React, {Fragment} from 'react'
 import PropTypes from 'prop-types'
 import noAvatar from "../images/no_avatar.jpg"
 import ProfileItem from "./ProfileItem"
+import {getUserinfo} from "../actions"
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 
 const dummy = [
   {
@@ -54,30 +57,67 @@ const dummy = [
   }
 ]
 
-const Friends = props => {
+class Friends extends React.Component {
 
-  let profileItems = dummy.map((item, index) => {
+
+   componentDidMount(){
+    this.props.getUserinfo(this.props.userInfo);
+
+  }
+ 
+
+  // let profileItems = this.props.image.friendRequest
+
+render(){
+  // let profileItems = this.props.friends.profileData.friends.map((item, index) => {
+  //   return (
+  //     <ProfileItem 
+  //       key={index}
+  //       name={item.firstName}
+  //       city={item.city}
+  //       image={item.image}
+  //       hobbies={item.hobbies}
+  //     />
+  //   )
+  // })
+  // console.log(this.props.friends.profileData.friends, "these are my bffs")
+  return (
+    <>
+{
+  this.props.friends.profileData.friends.map((item, index) => {
     return (
       <ProfileItem 
         key={index}
-        name={item.name}
-        location={item.location}
+        name={item.firstName}
+        city={item.city}
         image={item.image}
         hobbies={item.hobbies}
       />
     )
   })
 
-  return (
-    <Fragment>
-      {profileItems}
-    </Fragment>
-  )
-
+}
+    </>
+    // <Fragment>
+    //   {profileItems}
+    // </Fragment>
+  )}
+  
 }
 
 Friends.propTypes = {
 
 }
 
-export default Friends
+const mapStateToProps = state => {
+  return {
+    friends: state.image
+  };
+};
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { getUserinfo }
+  )(Friends)
+);
