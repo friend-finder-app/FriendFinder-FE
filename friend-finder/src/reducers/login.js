@@ -11,7 +11,6 @@ const initialState = {
     switch(action.type) {
         
         case LOGIN_SUCCESS:
-            console.log(action.payload)
         return {
             ...state,
             ...action.payload,

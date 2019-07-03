@@ -43,20 +43,21 @@ export const postSignUp = values => dispatch => {
 };
 
 
-// export const LOAD_USER_DATA_SUCCESS = "LOAD_USER_DATA_SUCCESS";
-// export const LOAD_USER_DATA_FAIL = "LOAD_USER_DATA_FAIL";
+export const LOAD_USER_DATA_SUCCESS = "LOAD_USER_DATA_SUCCESS";
+export const LOAD_USER_DATA_FAIL = "LOAD_USER_DATA_FAIL";
 
-// export const postSignUp = values => dispatch => {
-//   return axios
-//     .get(`https://friendfinder-be.herokuapp.com/api/users/ID`, values)
-//     .then(res => {
-//       console.log('User successfully added to database')
-//       dispatch({ type: LOAD_USER_DATA_SUCCESS, payload: res.data });
-//     })
-//     .catch(err => {
-//       if (err.status === "Error") {
-//         localStorage.removeItem("token");
-//       }
-//       dispatch({ type: LOAD_USER_DATA_FAIL, payload: err.message });
-//     });
-// };
+export const getUserinfo = values => dispatch => {
+  const headers =  {token: localStorage.getItem("token")}
+  return axios
+    .get(`https://friendfinder-be.herokuapp.com/api/users/${values}`, {headers} )
+    .then(res => {
+      console.log(res)
+      dispatch({ type: LOAD_USER_DATA_SUCCESS, payload: res.data });
+    })
+    .catch(err => {
+      if (err.status === "Error") {
+        localStorage.removeItem("token");
+      }
+      dispatch({ type: LOAD_USER_DATA_FAIL, payload: err.message });
+    });
+};

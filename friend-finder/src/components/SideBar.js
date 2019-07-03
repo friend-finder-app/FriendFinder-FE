@@ -4,11 +4,15 @@ import Dummy from '../images/ProfileDummy.png'
 import Button from '../images/PlusButton.png'
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+import {getUserinfo} from '../actions'
 
 const SideBar = props => {
 
   useEffect(() => {
-    console.log(props.userInfo.id)
+    const fetchData = async() => {
+      await props.getUserinfo(props.userInfo.id)
+    }
+    fetchData()
   },[])
 
   return (
@@ -35,7 +39,7 @@ const mapStateToProps = state => {
 export default withRouter(
   connect(
     mapStateToProps,
-    // { getUserinfo }
+    { getUserinfo }
   )(SideBar)
 );
 
