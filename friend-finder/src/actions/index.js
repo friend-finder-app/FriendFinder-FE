@@ -49,8 +49,9 @@ export const LOAD_USER_DATA_FAIL = "LOAD_USER_DATA_FAIL";
 export const getUserinfo = values => dispatch => {
   const headers =  {token: localStorage.getItem("token")}
   return axios
-    .get(`https://friendfinder-be.herokuapp.com/api/users/${values}`, {headers} )
+    .get(`https://friendfinder-be.herokuapp.com/api/users/currentuser`, {headers} )
     .then(res => {
+      console.log(res)
       dispatch({ type: LOAD_USER_DATA_SUCCESS, payload: res.data });
     })
     .catch(err => {
