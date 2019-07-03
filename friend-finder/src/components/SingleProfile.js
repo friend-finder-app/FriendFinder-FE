@@ -11,6 +11,7 @@ let dummy = {
 
 
 const SingleProfile = props => {
+  console.log(props)
   return (
     <div className="single-profile">
       <img src={dummy.image} />

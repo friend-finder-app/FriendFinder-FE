@@ -26,7 +26,7 @@ function App() {
       <Route exact path="/login" component={Login} />
       <Route exact path="/signup" component={Signup} />
       
-      <Switch>
+      {/* <Switch> */}
       <div className="main">
         <SideBar />
         <div className="main-stage">
@@ -36,7 +36,7 @@ function App() {
         <Route exact path="/single-profile/:id" component={SingleProfile}/>
         </div>
       </div>
-      </Switch>
+      {/* </Switch> */}
       </Switch>
       </Router>
     </Provider>

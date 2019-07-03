@@ -255,6 +255,11 @@ a {
   border: 1px solid black;
 }
 
+.small-profiles a {
+  width: 100%;
+
+}
+
 .small-profiles div {
   border: 1px solid black;
   width: 80%;
