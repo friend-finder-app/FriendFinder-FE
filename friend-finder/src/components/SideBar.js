@@ -22,7 +22,7 @@ const SideBar = props => {
       <div className="side-bar-img">
         <img src={Dummy} alt="user-image" />
         <h2>Welcome {props.userInfo.firstName} </h2>
-        <h3>Edit Profile</h3>
+        {/* <h3>Edit Profile</h3> */}
       </div>
     </div>
   )
