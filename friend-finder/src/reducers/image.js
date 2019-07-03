@@ -3,8 +3,9 @@ import {
 } from '../actions'
 
 const initialState = {
-    ifAuth: false,
-    profileData: {}
+    profileData: {
+        friends: []
+    }
   }
   
   export default function(state = initialState, action) {
