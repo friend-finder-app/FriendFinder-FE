@@ -20,6 +20,7 @@ const Signup = props => {
     firstName: '',
     lastName: '',
     age: '',
+    hobbies: ''
   })
 
   const handleChange = prop => e => {
@@ -103,6 +104,14 @@ const Signup = props => {
             value={values.city}
             onChange={handleChange("city")}
             placeholder = "Enter City"
+          />
+          <textarea
+            className = "input-styles"
+            value={values.hobbies}
+            onChange={handleChange("hobbies")}
+            placeholder = "Enter Hobbies, separate by comma. Ex: run, reading, coding"
+            cols="40" rows="4"
+
           />
           <textarea
             className = "input-styles"

@@ -2,6 +2,7 @@ import React, {Fragment, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import noAvatar from "../images/no_avatar.jpg"
 import ProfileItem from "./ProfileItem"
+import { getUserinfo } from "../actions";
 
 const dummy = [
   {
@@ -78,5 +79,11 @@ const Profiles = props => {
 Profiles.propTypes = {
 
 }
+
+const mapStateToProps = state => {
+  return {
+    userInfo: state.image.profileData
+  };
+};
 
 export default Profiles
