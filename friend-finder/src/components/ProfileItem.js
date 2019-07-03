@@ -9,7 +9,6 @@ const ProfileItem = props => {
   }
 
   return (
-    
     <div className="small-profiles" >
       <img src={props.image} onClick={() => youClicked("abc")}/>
       {/* <Link to={`/single-profile/aijk`}> */}
@@ -22,7 +21,6 @@ const ProfileItem = props => {
       </div>
       {/* </Link> */}
     </div>
-
   )
 }
 

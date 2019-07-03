@@ -4,7 +4,7 @@ import Navbar from "./Navbar"
 import background from '../images/friendUnsplashed.jpg'
 import Logo from '../images/LogoFF.png'
 import { Link } from "react-router-dom"
-
+import LandingNavbar from './LandingNavBar'
 const Landing = props => {
 
 
@@ -27,8 +27,8 @@ const Landing = props => {
       </div>
       </div>
       <div className = 'buttons-landing'> 
-        <Link  className = 'cover this'  to = '/login'>Login</Link>
-        <Link  className = 'slide this' to = '/signup'>Sign Up</Link>   
+        <Link  className = 'slide this'  to = '/login'>Login</Link>
+        <Link  className = 'cover this' to = '/signup'>Sign Up</Link>   
       </div>
       </div>
       </div>
