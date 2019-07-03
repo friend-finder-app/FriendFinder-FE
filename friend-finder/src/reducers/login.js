@@ -1,6 +1,7 @@
 import {
     LOGIN_SUCCESS,
-    LOGIN_FAILURE
+    LOGIN_FAILURE,
+    LOAD_USER_DATA_SUCCESS
 } from '../actions'
 
 const initialState = {
@@ -16,6 +17,13 @@ const initialState = {
             ...action.payload,
             ifAuth: true,
         }
+        case LOAD_USER_DATA_SUCCESS:
+            console.log(action.payload)
+                return {
+                    ...state,
+                    ...action.payload,
+
+                }
         default:
             return state;
     }

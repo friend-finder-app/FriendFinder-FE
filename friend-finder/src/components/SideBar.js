@@ -9,8 +9,10 @@ import {getUserinfo} from '../actions'
 const SideBar = props => {
 
   useEffect(() => {
+
     const fetchData = async() => {
       await props.getUserinfo(props.userInfo.id)
+      console.log(props.ProfileInfo)
     }
     fetchData()
   },[])
@@ -19,7 +21,7 @@ const SideBar = props => {
     <div className="side-bar">
       <div className="side-bar-img">
         <img src={Dummy} alt="user-image" />
-        <h2>Welcome Test </h2>
+        <h2>Welcome {props.userInfo.firstName} </h2>
         <h3>Edit Profile</h3>
       </div>
     </div>
@@ -32,7 +34,8 @@ SideBar.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    userInfo: state.login
+    userInfo: state.login,
+    ProfileInfo: state.login.ProfileInfo
   }
 }
 

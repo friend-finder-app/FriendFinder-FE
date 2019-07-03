@@ -4,17 +4,16 @@ import {
 } from '../actions'
 
 const initialState = {
-    profileData: {}
   }
   
   export default function(state = initialState, action) {
     switch(action.type) {
         
-        case LOAD_USER_DATA_SUCCESS:
+        case LOGIN_SUCCESS:
             console.log(action.payload)
         return {
             ...state,
-            profileData: action.payload,
+            ...action.payload,
         }
         default:
             return state;
