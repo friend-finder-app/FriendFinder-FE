@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import Dummy from "../images/ProfileDummy.png";
-import Button from "../images/PlusButton.png";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { getUserinfo } from "../actions";
