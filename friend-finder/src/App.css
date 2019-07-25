@@ -54,22 +54,6 @@
   overflow: hidden;
 }
 
-.textContainer {
-  width: 100%;
-  margin: 0 auto;
-  color: white;
-}
-
-div.landingText {
-  top: 25%;
-  left: 70%;
-  border-radius: 10px;
-  position: absolute;
-  width: 100%;
-  margin: -107px;
-  width: 450px;
-}
-
 .buttons-landing {
   display: flex;
   justify-content: center;
@@ -88,7 +72,7 @@ div.landingText {
     font-style: normal;
     font-size: 30px;
     border: 4px solid black;
-    padding: 20px 40px;
+    padding: 10px 20px;
     position: relative;
     overflow: hidden;
     margin: 25px;
@@ -132,7 +116,7 @@ div.landingText {
   font-family: cheap-pine, sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 60px;
+  font-size: 30px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -151,13 +135,18 @@ div.landingText {
 }
  
 .innertext {
-  width: 100%;
-  margin: 100px 30px;
   border-radius: 10px;
-  padding: 25px;
+  position: absolute;
+  width: 498px;
+  border-radius: 10px;
+  top: 21%;
+  left: 60%;
+  color:white;
+  transition: .4s;
 }
 .landing-logo {
   width: 10em;
+  transition: .4s;
 }
 
 /* nav */
@@ -461,3 +450,55 @@ textarea {
   font-style: normal;
   font-size: 15px;
 }
+
+@media (max-width:1268px) {
+  .innertext {
+    left: 50%;
+    transition: .4s;
+  }
+} 
+@media (max-width:998px) {
+  /* Landing Page responsivness */
+  .innertext {
+    position: absolute;
+    top: 17%;
+    left: 0%;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    transition: .4s;
+  }
+  .landing-text {
+    margin: 0 auto;
+    justify-content: center;
+    width: 200px;
+  }
+  .this {
+      font-size: 25px;
+      padding: 5px 10px;
+      margin: 5px auto;
+    }
+    .landing-logo {
+      width: 10em;
+      margin-top: 25%;
+    }
+} 
+
+@media (max-width:740px) {
+  /* Landing Page responsivness */
+  .innertext {
+    top: 13%;
+    left: 0%;
+    transition: .4s;
+  }
+  .landing-text {
+    margin: 0 auto;
+    justify-content: center;
+    width: 200px;
+  }
+
+    .landing-logo {
+      width: 5em;
+      margin-top: 40%;
+    }
+} 
