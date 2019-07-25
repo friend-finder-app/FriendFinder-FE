@@ -149,6 +149,39 @@
   transition: .4s;
 }
 
+
+.second-section {
+  background-color: #dee6eb;
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+  font-family: cheap-pine, sans-serif;
+  font-size: 25px;
+}
+.third-section {
+  background-color: #d3dbc6;
+  display: flex;
+  justify-content: space-around;
+  padding: 25px;
+  font-family: cheap-pine, sans-serif;
+  font-size: 25px;
+}
+
+.second-section-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+  margin: auto;
+}
+.second-section-text h1 {
+  font-weight: normal;
+}
+
+.landing-icons {
+  width:  15em;
+  margin: auto;
+}
 /* nav */
 
 .nav-title {
@@ -500,5 +533,11 @@ textarea {
     .landing-logo {
       width: 5em;
       margin-top: 40%;
+    }
+
+    .second-section, .third-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 } 
